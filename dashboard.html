@@ -23,7 +23,7 @@
   <!-- Main Content -->
   <div class="main">
     <div id="home" class="section active">
-      <h1>Bienvenue dans le Cahier interactif d'activités numériques en art de la table</h1>
+      <h1>Bienvenue dans le cahier interactif d'activité numérique en art de la table</h1>
       <p>Apprenez les bases de l’art de la table à travers des exercices interactifs, des vidéos explicatives et des quiz.</p>
       <button class="btn" onclick="showSection(event, 'activities')">Commencer maintenant</button>
     </div>
@@ -65,22 +65,32 @@
       </div>
     </div>
     <div id="videos" class="section">
-      <h1>Vidéos de Démonstration</h1>
-      <p>Regardez nos vidéos pour visualiser les gestes et techniques de service.</p>
-      
-      <video controls width="350">
+  <h1>Vidéos de Démonstration</h1>
+  <p>Regardez nos vidéos pour visualiser les gestes et techniques de service.</p>
+
+  <div class="videos-wrapper">
+    <div class="video-item">
+      <h3>Les bons gestes de nettoyage en hôtellerie</h3>
+      <video controls>
         <source src="assets/video1.mp4" type="video/mp4">
       </video>
-       <video controls width="350">
-         
+    </div>
+
+    <div class="video-item">
+      <h3>Introduction aux techniques de service</h3>
+      <video controls>
         <source src="assets/video2.mp4" type="video/mp4">
       </video>
-      <p>Les bases de l'hygiène et sécurité</p>
-       <video controls width="350">
+    </div>
+
+    <div class="video-item">
+      <h3>Les bases de l'hygiène et sécurité</h3>
+      <video controls>
         <source src="assets/video3.mp4" type="video/mp4">
       </video>
-      
     </div>
+  </div>
+</div>
     <div id="quiz" class="section">
       <div id="quiz-container">
         <h1>Quiz – Testez vos connaissances</h1>
