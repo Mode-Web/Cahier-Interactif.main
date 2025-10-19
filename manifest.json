@@ -1,0 +1,20 @@
+{
+  "name": "Cahier Interactif",
+  "short_name": "Cahier",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2f4d6a",
+  "icons": [
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "192x192",
+      "type": "a/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

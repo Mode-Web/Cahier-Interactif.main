@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cahier d'activités numérique – Art de la Table</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo.jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a class="active" onclick="showSection(event, 'home')">Accueil</a>
+    <a onclick="showSection(event, 'activities')">Activités Pratiques</a>
+    <a onclick="showSection(event, 'videos')">Vidéos</a>
+    <a onclick="showSection(event, 'quiz')">Quiz</a>
+    <a onclick="showSection(event, 'fiches')">Fiches Techniques</a>
+    <a onclick="showSection(event, 'progress')">Progression</a>
+    <a onclick="showSection(event, 'forum')">forum</a>
+
+  </div>
+  <!-- Main Content -->
+  <div class="main">
+    <div id="home" class="section active">
+      <h1>Bienvenue dans le cahier interactif d'activité numérique en art de la table</h1>
+      <p>Apprenez les bases de l’art de la table à travers des exercices interactifs, des vidéos explicatives et des quiz.</p>
+      <button class="btn" onclick="showSection(event, 'activities')">Commencer maintenant</button>
+    </div>
+    <div id="activities" class="section">
+      <h1>Activités Pratiques</h1>
+      <div class="grid">
+        <div class="card">
+          <img src="assets/photo2.jpeg" alt="mise en place">
+          <h3>mise en place</h3>
+          <p>Apprenez à disposer les assiettes, verres et couverts selon les règles d’art.</p>
+          <div class="btn-group">
+          <button class="btn" onclick="showFreeImage(0)">Gratuit</button>
+            <button class="btn" onclick="showTextModal('mise-en-place')">Payant</button>
+          </div>
+        </div>
+        <div class="card">
+        <img src="assets/photo3.jpeg" alt="Hygiène et sécurité">
+          <h3>Hygiène et sécurité</h3>
+          <p>Plongez dans le module Hygiène et sécurité pour apprendre et perfectionner vos pratiques en art de la table.<br>
+            Retrouvez des fiches techniques illustrées, des démonstrations pratiques et des supports PDF téléchargeables pour maîtriser les normes d’hygiène et de sécurité appliquées dans les métiers de la restauration.
+          </p>
+          <div class="btn-group">
+            <button class="btn" onclick="showFreeImage(1)">Gratuit</button>
+
+            <button class="btn" onclick="showTextModal('hygiene-securite')">Payant</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/photo4.jpeg" alt="Techniques de service">
+          <h3>Techniques de service</h3>
+          <p>Découvrez les gestes et méthodes professionnelles du service en salle à travers ce module complet !<br>
+            Accédez à des fiches techniques, démonstrations pas à pas et supports PDF pour apprendre à réaliser un service raffiné et conforme aux standards de l’hôtellerie et de la restauration.
+          </p>
+          <div class="btn-group">
+            <button class="btn" onclick="showFreeImage(2)">Gratuit</button>
+            <button class="btn" onclick="showTextModal('techniques-service')">Payant</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="videos" class="section">
+      <h1>Vidéos de Démonstration</h1>
+      <p>Regardez nos vidéos pour visualiser les gestes et techniques de service.</p>
+      <video controls width="350">
+        <source src="assets/video1.mp4" type="video/mp4">
+      </video>
+       <video controls width="350">
+        <source src="assets/video2.mp4" type="video/mp4">
+      </video>
+       <video controls width="350">
+        <source src="assets/video3.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div id="quiz" class="section">
+      <div id="quiz-container">
+        <h1>Quiz – Testez vos connaissances</h1>
+        <div id="question-number"></div>
+        <div id="question-text"></div>
+        <div id="answer-buttons"></div>
+        <button id="next-btn">Question suivante</button>
+        <div id="progress-bar"><div id="progress-fill"></div></div>
+      </div>
+    </div>
+    <div id="fiches" class="section">
+      <h1>Fiches Techniques</h1>
+      <div class="card">
+        <h3>Les types de couverts</h3>
+        <p>Découvrez les différents types de couverts utilisés dans le service à table.</p>
+      </div>
+      <div class="card">
+      
+      </div>
+    </div>
+    <div id="progress" class="section">
+      <h1>Suivi de Progression</h1>
+      <div class="progress-table-wrapper">
+        <table id="progress-table">
+          <thead>
+            <tr>
+              <th>Activité</th>
+              <th>Status</th>
+              <th>Commentaires</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Exercice 1</td>
+              <td class="status-cell" data-status="Complété">Complété</td>
+              <td class="comment-cell">Très bien</td>
+              <td><button class="btn" onclick="editRow(this)">edit</button></td>
+            </tr>
+            <tr>
+              <td>Exercice 2</td>
+              <td class="status-cell" data-status="En cours">En cours</td>
+              <td class="comment-cell">À améliorer</td>
+              <td><button class="btn" onclick="editRow(this)">edit</button></td>
+            </tr>
+            <tr>
+              <td>Exercice 3</td>
+              <td class="status-cell" data-status="Non commencé">Non commencé</td>
+              <td class="comment-cell">-</td>
+              <td><button class="btn" onclick="editRow(this)">edit</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="forum" class="section">
+      <h1>Forum de Discussion</h1>
+      <p>Participez aux discussions, posez des questions et partagez vos connaissances avec d'autres apprenants et enseignants.</p>
+
+      <div class="forum-thread" id="forum-thread-container"></div>
+      <!-- Forum Post Form -->
+      <div class="card" style="margin-top: 30px; text-align: left;">
+        <h3>Posez une question</h3>
+        <form id="forum-form">
+          <textarea id="forum-question-input" placeholder="Écrivez votre question ici..." rows="3" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
+          <button type="submit" class="btn">Poser la question</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for Text -->
+  <div id="textModal" class="modal" tabindex="-1">
+    <div class="modal-content">
+      <span class="close" onclick="closeTextModal()">&times;</span>
+      <div id="modalText"></div>
+    </div>
+    <div class="payment-section" style="background-color: white;">
+  <p class="payment-title">💳 Paiement rapide et sécurisé avec :</p>
+  <div class="payment-logos">
+    <img src="assets/postdz.png" alt="Post DZ">
+    <img src="assets/paypal.png" alt="PayPal">
+    <img src="assets/bna.svg" alt="BNA">
+  </div>
+</div>
+
+  </div>
+
+
+  
+<div id="imageModal" class="modal">
+  <div class="modal-content" style="max-width: 700px; text-align: center;">
+    <span class="close" onclick="closeImageModal()">&times;</span>
+
+    <img id="imageDisplay" src="" alt="صورة النشاط" style="max-width:100%; border-radius:10px;">
+  </div>
+</div>
+<script src="main.js"></script>
+  
+</body>
+</html>
