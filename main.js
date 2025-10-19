@@ -357,8 +357,8 @@
 
   function showFreeImage(cardIndex) {
   const imageMap = {
-    0: "assets/photo5.jpeg",
-    1: "assets/photo6.jpeg",
+    0: "assets/photo6.jpeg",
+    1: "assets/photo5.jpeg",
     2: "assets/photo7.jpeg"
   };
 
